@@ -57,11 +57,37 @@
 
   <link rel="icon" type="image/png" href="logo.png" />
 
+
+<style id="logo-and-mobile-navbar-fix">
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    aspect-ratio: 1 / 1;
+    max-width: 100%;
+    display: block;
+    flex: 0 0 auto;
+  }
+
+  #mobileMenu {
+    display: none;
+  }
+
+  #mobileMenu.is-open {
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    #mobileMenu, #mobileMenuButton {
+      display: none !important;
+    }
+  }
+</style>
 <style id="legal-section-display">
   #privacy, #terms { display: none; }
   #privacy:target, #terms:target { display: block; }
 </style>
-</head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden" data-aos-easing="ease-out-cubic" data-aos-duration="1000" data-aos-delay="0"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-20 max-w-[1360px] mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><img alt="Rajesh Software Solutions Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UqAzJV2YjJBUuDOhsI9SEHKoYgPI5UEgRSwT1xk9xSqDhhwGf8jm9_QD-mH_SCWuytklTc3tdvsjLzPIImLeyqo1vJpGzbAhHA32enaJtqlZEybMF5jTfmc3hBYZNXkeB53pxZOIJskAVRzBVBPhqdieKRvafcNADudPHWpH4-O87JSSuLhEjtaKTSqDBPHD0Q1jOehLLBR4XwXj9zNQdcOkbA6AgRa6YLSAyORQYlNWYuEiVwipEIhO8"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">Rajesh Software Solutions</span></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary-container font-semibold"><a aria-current="page" class="transition-colors text-primary-container font-semibold" data-path="home" href="#home">Home</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#services">Services</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-us" href="#about">About Us</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact-us" href="#contact">Contact Us</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs font-label-md text-label-md rounded bg-primary-container text-on-primary-container font-semibold uppercase hover:bg-surface-tint hover:text-on-primary shadow-[0_0_20px_rgba(0,229,255,0.35)] transition-all" data-path="contact-us" href="#contact">Get in Touch</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background overflow-x-hidden"><div class="flex flex-col w-full">
+</head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden" data-aos-easing="ease-out-cubic" data-aos-duration="1000" data-aos-delay="0"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-20 max-w-[1360px] mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><img src="logo.png" alt="Rajesh Software Solutions Logo" class="brand-logo" /><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">Rajesh Software Solutions</span></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary-container font-semibold"><a aria-current="page" class="transition-colors text-primary-container font-semibold" data-path="home" href="#home">Home</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#services">Services</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-us" href="#about">About Us</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact-us" href="#contact">Contact Us</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs font-label-md text-label-md rounded bg-primary-container text-on-primary-container font-semibold uppercase hover:bg-surface-tint hover:text-on-primary shadow-[0_0_20px_rgba(0,229,255,0.35)] transition-all" data-path="contact-us" href="#contact">Get in Touch</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><button id="mobileMenuButton" type="button" class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded border border-primary-container/20 bg-surface-container-high/70 text-primary-container hover:bg-surface-container-highest transition-colors" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu"><span class="sr-only">Open navigation menu</span><span class="flex flex-col gap-1.5" aria-hidden="true"><span class="block h-0.5 w-5 rounded bg-current"></span><span class="block h-0.5 w-5 rounded bg-current"></span><span class="block h-0.5 w-5 rounded bg-current"></span></span></button></div></div><div id="mobileMenu" class="md:hidden absolute left-0 right-0 top-full border-t border-surface-container-highest/70 bg-surface/95 backdrop-blur-xl shadow-[0_12px_28px_rgba(0,0,0,0.35)]"><nav class="max-w-[1360px] mx-auto px-margin-mobile py-3 flex flex-col gap-1" aria-label="Mobile navigation"><a class="px-3 py-3 rounded font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/70 transition-colors" href="#services">Services</a><a class="px-3 py-3 rounded font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/70 transition-colors" href="#about">About Us</a><a class="px-3 py-3 rounded font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/70 transition-colors" href="#contact">Contact Us</a></nav></div></header><main class="w-full pt-20 bg-background overflow-x-hidden"><div class="flex flex-col w-full">
 <!-- Top Subtle Ambient Light Glow -->
 <div class="relative w-full overflow-hidden" id="home">
 <div class="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[850px] h-[360px] bg-primary-container/10 rounded-full blur-[140px] pointer-events-none"></div>
@@ -562,7 +588,7 @@ Every production release is built with clean architecture, adhering strictly to 
 <!-- Logo & Narrative (5 Cols) -->
 <div class="md:col-span-5 flex flex-col items-start">
 <div class="flex items-center gap-3 mb-4">
-<img alt="Rajesh Software Solutions Logo" class="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UqAzJV2YjJBUuDOhsI9SEHKoYgPI5UEgRSwT1xk9xSqDhhwGf8jm9_QD-mH_SCWuytklTc3tdvsjLzPIImLeyqo1vJpGzbAhHA32enaJtqlZEybMF5jTfmc3hBYZNXkeB53pxZOIJskAVRzBVBPhqdieKRvafcNADudPHWpH4-O87JSSuLhEjtaKTSqDBPHD0Q1jOehLLBR4XwXj9zNQdcOkbA6AgRa6YLSAyORQYlNWYuEiVwipEIhO8">
+<img src="logo.png" alt="Rajesh Software Solutions Logo" class="brand-logo" />
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-sm mb-6">
             Architecting robust mobile applications, scalable cloud web platforms, and human-centered digital experiences for high-velocity enterprises.
@@ -755,4 +781,38 @@ Every production release is built with clean architecture, adhering strictly to 
   })();
 </script>
 
+
+<script id="mobile-navbar-script">
+  (() => {
+    const menuButton = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (!menuButton || !mobileMenu) return;
+
+    const closeMenu = () => {
+      mobileMenu.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation menu');
+    };
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('is-open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    });
+
+    mobileMenu.querySelectorAll('a[href="#services"], a[href="#about"], a[href="#contact"]').forEach((link) => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) closeMenu();
+    });
+  })();
+</script>
 </body></html>
