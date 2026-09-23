@@ -481,9 +481,9 @@ Every production release is built with clean architecture, adhering strictly to 
 </div>
 <!-- Contact Vectors -->
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-<a class="p-3.5 rounded bg-surface-container-lowest border border-surface-container-highest/60 hover:border-primary-container/50 transition-colors block" href="mailto:rajeshmaity272@gmail.com">
+<a class="p-3.5 rounded bg-surface-container-lowest border border-surface-container-highest/60 hover:border-primary-container/50 transition-colors block" href="mailto:info@rajeshsoftwaresolution.com">
 <span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Official Contact Channel</span>
-<span class="font-label-sm text-label-sm text-on-surface font-semibold hover:text-primary-container break-all">rajeshmaity272@gmail.com</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold hover:text-primary-container break-all">info@rajeshsoftwaresolution.com</span>
 </a>
 <a class="p-3.5 rounded bg-surface-container-lowest border border-surface-container-highest/60 hover:border-primary-container/50 transition-colors block" href="tel:+919883918332">
 <span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Direct Phone</span>
@@ -522,7 +522,7 @@ Every production release is built with clean architecture, adhering strictly to 
 </div>
 <span class="material-symbols-outlined text-primary-container text-3xl">send</span>
 </div>
-<form class="space-y-4" id="enterpriseContactForm" onsubmit="event.preventDefault(); handleFormSubmit();" action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="af81a8c3-57cc-4ad9-8d11-9c7ca56aa18a">
+<form class="space-y-4" id="enterpriseContactForm" onsubmit="handleFormSubmit(event);" action="https://api.web3forms.com/submit" method="POST"><input type="hidden" name="access_key" value="af81a8c3-57cc-4ad9-8d11-9c7ca56aa18a">
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <div>
 <label class="block font-label-sm text-label-sm text-on-surface-variant uppercase mb-1" for="clientName">Full Name *</label>
@@ -631,7 +631,7 @@ Every production release is built with clean architecture, adhering strictly to 
 <a class="hover:text-primary-container transition-colors" href="#contact">Developer Privacy &amp; Policy Standards</a>
 </li>
 </ul>
-<p class="font-label-sm text-label-sm text-outline">Proprietorship Managed by <span class="text-on-surface">Rajesh Maity</span>. Official Contact: <a class="text-primary-container hover:underline" href="mailto:rajeshmaity272@gmail.com">rajeshmaity272@gmail.com</a> | +91 9883918332. Registered Office: N0096, Nandakumar Pur, Mathurapur II, Raidighi, South 24 Parganas, West Bengal – 743349, India.</p>
+<p class="font-label-sm text-label-sm text-outline">Proprietorship Managed by <span class="text-on-surface">Rajesh Maity</span>. Official Contact: <a class="text-primary-container hover:underline" href="mailto:info@rajeshsoftwaresolution.com">info@rajeshsoftwaresolution.com</a> | +91 9883918332. Registered Office: N0096, Nandakumar Pur, Mathurapur II, Raidighi, South 24 Parganas, West Bengal – 743349, India.</p>
 </div>
 </div>
 <!-- Bottom Copyright Strip -->
@@ -649,12 +649,38 @@ Every production release is built with clean architecture, adhering strictly to 
 </footer>
 </div>
 <script>
-  function handleFormSubmit() {
+  async function handleFormSubmit(event) {
+    event.preventDefault();
     const form = document.getElementById('enterpriseContactForm');
     const successBox = document.getElementById('formSuccessMessage');
-    if (form && successBox) {
+    const submitBtn = document.getElementById('submitBtn');
+    if (!form || !successBox) return;
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Submission failed');
+      }
+
       form.classList.add('hidden');
       successBox.classList.remove('hidden');
+    } catch (error) {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '';
+      }
+      alert('Your message could not be sent. Please try again.');
     }
   }
 
@@ -665,6 +691,11 @@ Every production release is built with clean architecture, adhering strictly to 
       form.reset();
       form.classList.remove('hidden');
       successBox.classList.add('hidden');
+      const submitBtn = document.getElementById('submitBtn');
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '';
+      }
     }
   }
 </script>
@@ -683,7 +714,7 @@ Every production release is built with clean architecture, adhering strictly to 
 <p><strong class="text-on-surface">Security:</strong> Reasonable measures are used to protect information handled through the website and business communications. No internet transmission can be guaranteed to be completely secure.</p>
 <p><strong class="text-on-surface">Children:</strong> This business website is not directed specifically to children, and we do not knowingly request unnecessary personal information from children.</p>
 <p><strong class="text-on-surface">Policy updates:</strong> This policy may be updated when business practices or legal requirements change.</p>
-<p><strong class="text-on-surface">Contact:</strong> Rajesh Software Solutions, Proprietor: Rajesh Maity. Email: <a class="text-primary-container hover:underline" href="mailto:rajeshmaity272@gmail.com">rajeshmaity272@gmail.com</a>. Phone: +91 9883918332. Address: N0096, Nandakumar Pur, Mathurapur II, Raidighi, South 24 Parganas, West Bengal – 743349, India</p>
+<p><strong class="text-on-surface">Contact:</strong> Rajesh Software Solutions, Proprietor: Rajesh Maity. Email: <a class="text-primary-container hover:underline" href="mailto:info@rajeshsoftwaresolution.com">info@rajeshsoftwaresolution.com</a>. Phone: +91 9883918332. Address: N0096, Nandakumar Pur, Mathurapur II, Raidighi, South 24 Parganas, West Bengal – 743349, India</p>
 </div></div>
 </section>
 <section id="terms" class="max-w-[1360px] mx-auto px-margin-mobile lg:px-margin py-24 w-full">
@@ -700,7 +731,7 @@ Every production release is built with clean architecture, adhering strictly to 
 <p><strong class="text-on-surface">Availability and liability:</strong> Website and service availability may vary because of maintenance, third-party dependencies, internet conditions, or circumstances outside reasonable control. Nothing on this page creates an unconditional uptime, security, response-time, or delivery guarantee.</p>
 <p><strong class="text-on-surface">Changes:</strong> Services, website content, and these terms may be updated when business requirements or legal obligations change.</p>
 <p><strong class="text-on-surface">Legal framework:</strong> Agreements and disputes are subject to applicable laws and jurisdiction in India, with the specific terms for a project governed by its written agreement where one exists.</p>
-<p><strong class="text-on-surface">Contact:</strong> Rajesh Software Solutions, Proprietor: Rajesh Maity. Email: <a class="text-primary-container hover:underline" href="mailto:rajeshmaity272@gmail.com">rajeshmaity272@gmail.com</a>. Phone: +91 9883918332.</p>
+<p><strong class="text-on-surface">Contact:</strong> Rajesh Software Solutions, Proprietor: Rajesh Maity. Email: <a class="text-primary-container hover:underline" href="mailto:info@rajeshsoftwaresolution.com">info@rajeshsoftwaresolution.com</a>. Phone: +91 9883918332.</p>
 </div></div>
 </section>
 </main>
